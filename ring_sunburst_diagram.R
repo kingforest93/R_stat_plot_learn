@@ -1,6 +1,7 @@
 rm(list=ls())
 gc()
 
+#draw ring diagram using ggplot coord_polar()
 library(ggplot2)
 dat <- data.frame(
 	name <- c('A','A1','A2','A3','B','B1','B2','B3'),
@@ -20,10 +21,10 @@ p <- ggplot(dat, aes(x=level, y=value, fill=name, alpha=level)) +
 	labs(x=NULL, y=NULL) +
 	theme_minimal()
 
+#draw interactive sunburst plot using package "sunburstR"
 library(sunburstR)
 library(d3r)
 library(htmltools)
-
 dat <- data.frame(
   level1 = rep(c("a", "b"), each=3),
   level2 = paste0(rep(c("a", "b"), each=3), 1:3),

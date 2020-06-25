@@ -2,7 +2,7 @@ rm(list=ls())
 gc()
 
 # KNN k-nearest neighbors
-llibrary(class)
+library(class)
 library(gmodels)
 
 #prepare data
@@ -54,4 +54,3 @@ pred <- predict(m,test,type="class")
 #comfusion matrix 
 CrossTable(pred,test.label,prop.r = F,prop.t = F,prop.chisq = F)
 
-# ... ...

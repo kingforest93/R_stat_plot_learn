@@ -7,8 +7,8 @@ library(agricolae)
 library(tidyr)
 
 #read data
+setwd("D:")
 dat <- read.table("clipboard", header=T)
-dat$Sub <- paste(c(rep("-PEG",3),rep("+PEG",3)), dat$Sub, sep="_")
 dat <- gather(dat, key="Replication", value="Value", -Sub)
 
 # anova and multiple comparison

@@ -4,6 +4,7 @@ gc()
 #loading
 library(ggplot2)
 library(ggtree)
+library(ape)
 
 tree <- rtree(50)
 # only topology line
@@ -34,9 +35,6 @@ p11 <- p10 + geom_balance(node=54, fill='darkgreen', color='white', alpha=0.38)
 p12 <- p11 + theme(legend.position="right")
 
 # gzoom to focus and enlarge a clade
-library("ape")
-library("ggtree")
-# simple test
 data(chiroptera)
 gzoom(chiroptera,grep("Plecotus", chiroptera$tip.label))
 # complicated test
@@ -46,7 +44,6 @@ p <- ggtree(chiroptera,aes(color=group)) + geom_tiplab() + xlim(NA, 23)
 gzoom(p, grep("Plecotus",chiroptera$tip.label), xmax_adjust=2)
 
 # facet to multiple trees
-library(ggtree)
 trees <- lapply(c(10, 20, 40), rtree)
 class(trees) <- "multiPhylo"
 ggtree(trees) + facet_wrap(~.id,scale="free") + geom_tiplab()

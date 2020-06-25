@@ -5,7 +5,7 @@ gc()
 library(ggplot2)
 
 # read data
-setwd("D:/Biowork/test")
+setwd("D:/Biowork/test/Rscript")
 dt <- read.csv("RIL.csv", header=T, sep=",", na.strings="NA")
 rownames(dt) <- dt[,1]
 dt <- dt[,-1]
