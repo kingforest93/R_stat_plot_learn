@@ -7,8 +7,8 @@ library(agricolae)
 library(tidyr)
 
 #read data
-setwd("D:")
-dat <- read.table("clipboard", header=T)
+setwd("D:/Biowork/test/Rscript")
+dat <- read.table("photo.csv", header=T)
 dat <- gather(dat, key="Replication", value="Value", -Sub)
 
 # anova and multiple comparison
